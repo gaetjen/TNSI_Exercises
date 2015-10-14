@@ -1,18 +1,26 @@
 \documentclass{scrartcl}
 \usepackage[a4paper,left=1in,right=1in,top=1.2in,bottom=1in]{geometry}
+\usepackage{siunitx}
+\usepackage{graphicx}
 \setkomafont{disposition}{\normalfont\bfseries}
+
+%title
 \title{Exercise xx:\\Topic of Exercise}
 \subtitle{Theoretical Neuroscience I}
 \author{Johannes G\"atjen}
 
+%use these for structure/overview
+\newcommand\Question{%
+  \textbf{Question:}%
+}
 \newcommand\Answer{%
-  \textbf{Answer:}\\%
+  \textbf{Answer:}%
 }
 
 \begin{document}
 \maketitle
 \section{First Section}
 \subsection{Subsection}
-\Answer
+\Answer\\
 %text here
 \end{document}
