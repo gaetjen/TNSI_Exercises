@@ -7,7 +7,7 @@ function make_figure( timeVector, electrodeCurrent, capacitorCurrent, membraneVo
     plot(timeVector, capacitorCurrent, 'r');
     % membrane current
     plot(timeVector, membraneVoltage / membraneResistance, 'g');
-    xlabel('time $[ms]$', 'FontSize', 16, 'interpreter', 'latex');
+    xlabel('time [ms]', 'FontSize', 16, 'interpreter', 'latex');
     ylabel('current $[\frac{nA}{mm^2}]$', 'FontSize', 16, 'interpreter', 'latex');
     xlim([timeVector(1) timeVector(length(timeVector))]);
     legend('electrode current', 'capacitor current', 'membrane current', 'Location', 'eastoutside');
@@ -17,9 +17,9 @@ function make_figure( timeVector, electrodeCurrent, capacitorCurrent, membraneVo
     % V_infinity
     plot(timeVector, membraneResistance * electrodeCurrent, 'r'); 
     
-    xlabel('time $[ms]$', 'FontSize', 16, 'interpreter', 'latex');
-    ylabel('Voltage $[mV]$', 'FontSize', 16, 'interpreter', 'latex');
+    xlabel('time [ms]', 'FontSize', 16, 'interpreter', 'latex');
+    ylabel('Voltage [mV]', 'FontSize', 16, 'interpreter', 'latex');
     xlim([timeVector(1) timeVector(length(timeVector))]);
-    legend('membrane Voltage', 'equilibrium potential', 'Location', 'eastoutside');
+    legend('membrane voltage', 'equilibrium potential', 'Location', 'eastoutside');
 end
 
