@@ -125,3 +125,6 @@ sympy-plots-for-*.tex/
 *.bak
 *.sav
 slides/
+*.asv
+ex2/src/Ie_example.m
+ex2/src/V_example.m
