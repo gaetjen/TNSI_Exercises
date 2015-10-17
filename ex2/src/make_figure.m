@@ -1,3 +1,5 @@
+% Author: Johannes Gätjen
+
 function make_figure( timeVector, electrodeCurrent, capacitorCurrent, membraneVoltage , membraneResistance)
 %MAKE_FIGURES Takes all the calculated data and puts it into a nice figure
     figure('Position', [200, 200, 800, 500]);
