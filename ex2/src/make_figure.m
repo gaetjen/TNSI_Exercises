@@ -1,4 +1,4 @@
-% Author: Johannes Gätjen
+% Author: Johannes Gätjen, Lorena Morton, Maria del Cerro
 
 function make_figure( timeVector, electrodeCurrent, capacitorCurrent, membraneVoltage , membraneResistance)
 %MAKE_FIGURES Takes all the calculated data and puts it into a nice figure

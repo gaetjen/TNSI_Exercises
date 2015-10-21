@@ -1,4 +1,4 @@
-% Author: Johannes Gätjen
+% Author: Johannes Gätjen, Lorena Morton, Maria del Cerro
 
 % Course on theoretical neuroscience
 % Teacher: Jochen Braun

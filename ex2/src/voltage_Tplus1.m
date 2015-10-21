@@ -1,4 +1,4 @@
-% Author: Johannes Gätjen
+% Author: Johannes Gätjen, Lorena Morton, Maria del Cerro
 
 function newVoltage = voltage_Tplus1( membraneVoltage, deltaT, membraneResistance, electrodeCurrent, timeConstant)
 %VOLTAGE_TPLUS1 calculate the membrane voltage at time t + deltaT
