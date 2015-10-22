@@ -24,7 +24,7 @@ deltaT = 0.05; %ms
 timeVector = 0:deltaT:maxT; % ms
 
 % 4. Generate your own input current vector.
-electrodeCurrentConstant = zeros(1, length(timeVector)) + electrodeCurrentStart;
+electrodeCurrentConstant = timeVector * 0 + electrodeCurrentStart;
 % divide by 1000 for correct scale
 electrodeCurrentLow = electrodeCurrentConstant .* sin(2 * pi * 10 * timeVector/1000);
 electrodeCurrentMed = electrodeCurrentConstant .* sin(2 * pi * 100 * timeVector/1000);
@@ -33,15 +33,15 @@ tcoarse = 0:10*deltaT:maxT;
 electrodeCurrentRan = electrodeCurrentConstant .* interp1( tcoarse, 2*(rand(size(tcoarse))-0.5), timeVector);
 
 
-membraneVoltageConstant = zeros(1, length(timeVector)) + membraneVoltageStart;
+membraneVoltageConstant = timeVector * 0 + membraneVoltageStart;
 membraneVoltageLow = membraneVoltageConstant;
 membraneVoltageMed = membraneVoltageConstant;
 membraneVoltageRan = membraneVoltageConstant;
 
-capacitorCurrentConstant = zeros(1, length(timeVector));
-capacitorCurrentLow = zeros(1, length(timeVector));
-capacitorCurrentMed = zeros(1, length(timeVector));
-capacitorCurrentRan = zeros(1, length(timeVector));
+capacitorCurrentConstant = timeVector * 0;
+capacitorCurrentLow = timeVector * 0;
+capacitorCurrentMed = timeVector * 0;
+capacitorCurrentRan = timeVector * 0;
 % 6. Iteratively calculate membrane potential and capacitor current
 for i = 2:length(timeVector)
     membraneVoltageConstant(i) = voltage_Tplus1(membraneVoltageConstant(i-1), deltaT, membraneResistance, electrodeCurrentConstant(i - 1), timeConstant);

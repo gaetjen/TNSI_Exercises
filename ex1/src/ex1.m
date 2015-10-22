@@ -1,3 +1,4 @@
+%Authors: Maria del Cerro, Johannes Gätjen, Lorena Morton
 %initialize the constants
 R=8.31;
 T=310;
