@@ -25,19 +25,18 @@ timeVector = 0:deltaT:maxT; % ms
 
 % 4. Generate your own input current vector.
 electrodeCurrentConstant = timeVector * 0 + electrodeCurrentStart;
-% divide by 1000 for correct scale
-electrodeCurrentLow = electrodeCurrentConstant .* sin(2 * pi * 10 * timeVector/1000);
+electrodeCurrentLow = electrodeCurrentConstant .* sin(2 * pi * 10 * timeVector/1000); % divide by 1000 for correct scale
 electrodeCurrentMed = electrodeCurrentConstant .* sin(2 * pi * 100 * timeVector/1000);
-
 tcoarse = 0:10*deltaT:maxT;
 electrodeCurrentRan = electrodeCurrentConstant .* interp1( tcoarse, 2*(rand(size(tcoarse))-0.5), timeVector);
 
-
+% define membrane voltage vectors
 membraneVoltageConstant = timeVector * 0 + membraneVoltageStart;
 membraneVoltageLow = membraneVoltageConstant;
 membraneVoltageMed = membraneVoltageConstant;
 membraneVoltageRan = membraneVoltageConstant;
 
+%define capacitor current vectors
 capacitorCurrentConstant = timeVector * 0;
 capacitorCurrentLow = timeVector * 0;
 capacitorCurrentMed = timeVector * 0;
@@ -61,8 +60,5 @@ make_figure(timeVector, electrodeCurrentConstant, capacitorCurrentConstant, memb
 make_figure(timeVector, electrodeCurrentLow, capacitorCurrentLow, membraneVoltageLow, membraneResistance);
 make_figure(timeVector, electrodeCurrentMed, capacitorCurrentMed, membraneVoltageMed, membraneResistance);
 make_figure(timeVector, electrodeCurrentRan, capacitorCurrentRan, membraneVoltageRan, membraneResistance);
-
-
-
 
 
