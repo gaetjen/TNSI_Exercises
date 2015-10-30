@@ -50,9 +50,13 @@ end
 make_figure(time_vector, input_constant, voltage_vector_constant, spikes_constant);
 make_figure(time_vector, input_low, voltage_vector_low, spikes_low);
 make_figure(time_vector, input_ramp, voltage_vector_ramp, spikes_ramp);
+
 figure();
-plot(diff(spikes_constant));
-hold on;
-plot(diff(spikes_ramp), 'r');
+plot(diff(spikes_constant)*1000);
 xlabel('spike number', 'interpreter', 'latex', 'FontSize', 16);
-ylabel('time [ms]', 'interpreter', 'latex', 'FontSize', 16);
+ylabel('interval length [ms]', 'interpreter', 'latex', 'FontSize', 16);
+
+figure();
+plot(diff(spikes_ramp)*1000);
+xlabel('spike number', 'interpreter', 'latex', 'FontSize', 16);
+ylabel('interval length [ms]', 'interpreter', 'latex', 'FontSize', 16);
