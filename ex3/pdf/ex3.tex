@@ -2,9 +2,12 @@
 \usepackage[a4paper,left=1in,right=1in,top=1.2in,bottom=1in]{geometry}
 \usepackage{siunitx}
 \usepackage{graphicx}
+\usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \setkomafont{disposition}{\normalfont\bfseries}
-
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
 %title
 \title{Exercise 03:\\Leaky Integrate \& Fire Neuron}
 \subtitle{Theoretical Neuroscience I}
@@ -83,14 +86,56 @@ Ramping input current (Figure \ref{ramp}): The input current slowly increases ov
 \section{Optional assignment}
 
 \Question\\
-Analytically solve the dynamical equation over a time interval $\Delta t$, to derive the numerical iteration rule:
+Analytically solve the dynamical equation 
 \begin{equation*}
-V_m(t+\Delta t) = V_m(t) \exp\left(-\frac{\Delta t}{\tau_m}\right) + \left(i_e(t) \cdot r_m + E_L \right) \left( 1 - \exp{\left( -\frac{\Delta t}{\tau_m}\right)}\right)
+\frac{\diff V_m(t)}{\diff t} = \frac{1}{\tau_m}\left( r_m \cdot i_e(t) + E_L - V_m(t)\right)
+\end{equation*}
+over a time interval $\Delta t$, to derive the numerical iteration rule
+\begin{equation*}
+V_m(t+\Delta t) = V_m(t) \exp\left(-\frac{\Delta t}{\tau_m}\right) + \left(i_e(t) \cdot r_m + E_L \right) \left( 1 - \exp{\left( -\frac{\Delta t}{\tau_m}\right)}\right).
 \end{equation*}
 
 \Answer\\
+Like in the single compartment model, the membrane potential relaxes towards an equilibrium potential as long as the membrane potential is below the threshold potential. Since we assume $i_e(t)$ to be constant over small intervals, we can say that $V_\infty = r_m \cdot i_e(t) + E_L$ and replace it in our dynamical equation and the numerical iteration rule for easier readability.
+
+\begin{equation}
+\frac{\diff V_m(t)}{\diff t} = \frac{1}{\tau_m}\left( V_\infty - V_m(t)\right)
+\label{dynamic}
+\end{equation}
+
+\begin{equation*}
+V_m(t+\Delta t) = V_m(t) \exp\left(-\frac{\Delta t}{\tau_m}\right) + V_\infty \left( 1 - \exp{\left( -\frac{\Delta t}{\tau_m}\right)}\right)
+\end{equation*}
+With some rearrangement we obtain:
+\begin{equation}
+V_m(t+\Delta t)= V_\infty + e^{-\frac{\Delta t}{\tau_m}}\left( V_m(t) -V_\infty\right)
+\label{numeric}
+\end{equation}
+
+The solution to the dynamical equation is 
+\begin{equation}
+V_m(t) = V_\infty + e^{-\frac{t}{\tau_m}}(V_m(0) - V_\infty).
+\label{solution}
+\end{equation}
 
 
+We prove this by substituting the derivation of equation \ref{solution} 
+\begin{equation}
+\frac{\diff V_m(t)}{\diff t} = -\frac{1}{\tau_m}(V_m(0) - V_\infty) e^{-\frac{t}{\tau_m}}
+\end{equation}
 
+in the left-hand side of equation \ref{dynamic} and equation \ref{solution} in the right-hand side of equation \ref{dynamic}.
+
+\begin{align*}
+-\frac{1}{\tau_m}(V_m(0) - V_\infty) e^{-\frac{t}{\tau_m}} &= \frac{1}{\tau_m}\left[ V_\infty - V_\infty - e^{-\frac{t}{\tau_m}}(V_m(0) - V_\infty)\right]\\
+\shortintertext{The $V_\infty$'s on the right side cancel each other and we have:}
+-\frac{1}{\tau_m}(V_m(0) - V_\infty) e^{-\frac{t}{\tau_m}} &= -\frac{1}{\tau_m}(V_m(0) - V_\infty) e^{-\frac{t}{\tau_m}}
+\end{align*}
+
+Since $V_m(0)$ is the membrane starting potential, in the case of $V_m(t+\Delta t)$ we can substitute $V_m(0)$ with $V_m(t)$ and $t$ with $\Delta t$ in equation \ref{solution} and arrive at equation \ref{numeric}:
+\begin{equation*}
+V_m(t+\Delta t) = V_\infty + e^{-\frac{\Delta t}{\tau_m}}\left( V_m(t) -V_\infty\right)
+\end{equation*}
+\hfill $\square$
 
 \end{document}

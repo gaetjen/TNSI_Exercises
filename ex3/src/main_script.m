@@ -1,3 +1,5 @@
+%authors: Maria del Cerro, Johannes Gätjen, Lorena Morton
+
 %define time vector
 delta_t = 0.0001;
 time_vector = 0:delta_t:0.5;
@@ -47,10 +49,12 @@ for i = 2:length(input_constant)
 end
 
 %plot stuff
-make_figure(time_vector, input_constant, voltage_vector_constant, spikes_constant);
-make_figure(time_vector, input_low, voltage_vector_low, spikes_low);
-make_figure(time_vector, input_ramp, voltage_vector_ramp, spikes_ramp);
+make_figure(time_vector, input_constant, voltage_vector_constant);
+make_figure(time_vector, input_low, voltage_vector_low);
+make_figure(time_vector, input_ramp, voltage_vector_ramp);
 
+%calculate and plot the inter-spike-intervals
+%not for low frequency input current because there are no spikes
 figure();
 plot(diff(spikes_constant)*1000);
 xlabel('spike number', 'interpreter', 'latex', 'FontSize', 16);

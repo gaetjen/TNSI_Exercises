@@ -1,4 +1,6 @@
-function make_figure(time, input, voltage, spikes)
+%authors: Maria del Cerro, Johannes Gätjen, Lorena Morton
+
+function make_figure(time, input, voltage)
 %MAKE_FIGURE does everything to create the plots
     figure('Position', [100 100 800 650]);
     subplot(2, 1, 1);

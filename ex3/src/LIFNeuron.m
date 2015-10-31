@@ -1,3 +1,5 @@
+%authors: Maria del Cerro, Johannes Gätjen, Lorena Morton
+
 classdef LIFNeuron
     %LIFNEURON Encapsulate the behavior of a leaky integrate-and-fire
     %neuron
