@@ -1,14 +1,17 @@
 % Author: Johannes Gätjen, Lorena Morton, Maria del Cerro
 
-function make_figure( timeVector, electrodeCurrent, capacitorCurrent, membraneVoltage , membraneResistance)
+function make_figure( timeVector, electrodeCurrent, membraneVoltage , membraneResistance)
 %MAKE_FIGURES Takes all the calculated data and puts it into a nice figure
     figure('Position', [200, 200, 800, 500]);
     subplot(2, 1, 1);
     plot(timeVector, electrodeCurrent); 
     hold on;
-    plot(timeVector, capacitorCurrent, 'r');
     % calculate and plot membrane current
-    plot(timeVector, membraneVoltage / membraneResistance, 'g');
+    membraneCurrent = membraneVoltage / membraneResistance;
+    plot(timeVector, membraneCurrent, 'g');
+    % calculate and plot capacitor current
+    capacitorCurrent = electrodeCurrent - membraneCurrent;
+    plot(timeVector, capacitorCurrent, 'r');
     xlabel('time [ms]', 'FontSize', 16, 'interpreter', 'latex');
     ylabel('current $[\frac{nA}{mm^2}]$', 'FontSize', 16, 'interpreter', 'latex');
     xlim([timeVector(1) timeVector(length(timeVector))]);

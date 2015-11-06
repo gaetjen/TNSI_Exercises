@@ -29,14 +29,16 @@ classdef LIFNeuron
         
         function [obj, spike] = input_step(obj, input_current, delta_t)
             %split equation into multiple parts for better readability
-            spike = false;
             first_part = obj.potential_membrane * exp(-delta_t / obj.time_constant);
             second_part = input_current * obj.resistance + obj.potential_reverse;
             third_part = 1 - exp(-delta_t/obj.time_constant);
             obj.potential_membrane = first_part + second_part * third_part;
+            %handle crossing of threshold potential
             if obj.potential_membrane > obj.potential_threshold
                 obj.potential_membrane = obj.potential_reset;
                 spike = true;
+            else %no spike occurred
+                spike = false;
             end
         end
     end

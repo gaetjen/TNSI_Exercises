@@ -21,7 +21,7 @@ membraneVoltageStart = 0; %mV
 minT = 0;
 maxT = 250; % ms
 deltaT = 0.05; %ms
-timeVector = 0:deltaT:maxT; % ms
+timeVector = minT:deltaT:maxT; % ms
 
 % 4. Generate your own input current vector.
 electrodeCurrentConstant = timeVector * 0 + electrodeCurrentStart;
@@ -36,29 +36,20 @@ membraneVoltageLow = membraneVoltageConstant;
 membraneVoltageMed = membraneVoltageConstant;
 membraneVoltageRan = membraneVoltageConstant;
 
-%define capacitor current vectors
-capacitorCurrentConstant = timeVector * 0;
-capacitorCurrentLow = timeVector * 0;
-capacitorCurrentMed = timeVector * 0;
-capacitorCurrentRan = timeVector * 0;
+
 % 6. Iteratively calculate membrane potential and capacitor current
 for i = 2:length(timeVector)
     membraneVoltageConstant(i) = voltage_Tplus1(membraneVoltageConstant(i-1), deltaT, membraneResistance, electrodeCurrentConstant(i - 1), timeConstant);
     membraneVoltageLow(i) = voltage_Tplus1(membraneVoltageLow(i-1), deltaT, membraneResistance, electrodeCurrentLow(i - 1), timeConstant);
     membraneVoltageMed(i) = voltage_Tplus1(membraneVoltageMed(i-1), deltaT, membraneResistance, electrodeCurrentMed(i - 1), timeConstant);
     membraneVoltageRan(i) = voltage_Tplus1(membraneVoltageRan(i-1), deltaT, membraneResistance, electrodeCurrentRan(i - 1), timeConstant);
-    
-    capacitorCurrentConstant(i) = membraneCapacitance * (membraneVoltageConstant(i) - membraneVoltageConstant(i - 1)) / deltaT;
-    capacitorCurrentLow(i) = membraneCapacitance * (membraneVoltageLow(i) - membraneVoltageLow(i - 1)) / deltaT;
-    capacitorCurrentMed(i) = membraneCapacitance * (membraneVoltageMed(i) - membraneVoltageMed(i - 1)) / deltaT;
-    capacitorCurrentRan(i) = membraneCapacitance * (membraneVoltageRan(i) - membraneVoltageRan(i - 1)) / deltaT;
 end
 
 
 % Plot everything
-make_figure(timeVector, electrodeCurrentConstant, capacitorCurrentConstant, membraneVoltageConstant, membraneResistance);
-make_figure(timeVector, electrodeCurrentLow, capacitorCurrentLow, membraneVoltageLow, membraneResistance);
-make_figure(timeVector, electrodeCurrentMed, capacitorCurrentMed, membraneVoltageMed, membraneResistance);
-make_figure(timeVector, electrodeCurrentRan, capacitorCurrentRan, membraneVoltageRan, membraneResistance);
+make_figure(timeVector, electrodeCurrentConstant, membraneVoltageConstant, membraneResistance);
+make_figure(timeVector, electrodeCurrentLow, membraneVoltageLow, membraneResistance);
+make_figure(timeVector, electrodeCurrentMed, membraneVoltageMed, membraneResistance);
+make_figure(timeVector, electrodeCurrentRan, membraneVoltageRan, membraneResistance);
 
 
