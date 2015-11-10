@@ -21,7 +21,7 @@ neuron_med_ = HHNeuron(10, 3, 360, 1200, -54.402, -77, 50, 0.37, 0.08, 0.5, -65)
 
 %create our input currents
 input_zero = time_vector * 0;
-input_med = input_zero + 72; %nA/mm^2
+input_med = input_zero + 62; %nA/mm^2
 input_med_ = input_zero + 61; %nA/mm^2
 
 %save all state variables in one big matrix
@@ -37,7 +37,6 @@ states_med(:, 1) = [voltage, n, m, h]';
 states_med_ = repmat(input_zero, 4, 1);
 [voltage, n, m, h] = get_state(neuron_med_);
 states_med_(:, 1) = [voltage, n, m, h]';
-
 
 for i = 2:length(time_vector)
     neuron_zero = input_step(neuron_zero, input_zero(i - 1), deltaT);
@@ -57,15 +56,15 @@ make_figures(time_vector, states_zero);
 make_figures(time_vector, states_med);
 make_figures(time_vector, states_med_);
 
-
 %we can now check what the steady state values are and do the large input
 %current
-ss = states_zero(:, end);
-
+display('steady states V, n, m, h:');
+ss = states_zero(:, end)
+%create input current
 input_large = input_zero + 100; %nA/mm^2
-
+%create neuron with the steady states
 neuron_large = HHNeuron(10, 3, 360, 1200, -54.402, -77, 50, ss(2), ss(3), ss(4), ss(1));
-
+%initialize result matrix
 states_large = repmat(input_zero, 4, 1);
 [voltage, n, m, h] = get_state(neuron_large);
 states_large(:, 1) = [voltage, n, m, h]';

@@ -1,5 +1,4 @@
 %authors: Johannes Gätjen, Maria del Cerro, Lorena Morton
-
 classdef HHNeuron
     %HHNEURON a class that stores the current state of a Hodgkin-Huxley
     %neuron
@@ -12,7 +11,7 @@ classdef HHNeuron
         reversal_leak %mV
         reversal_K %mV
         reversal_Na %mV
-        %gating variables for the sodium and potassium channels
+        %gating variables for the sodium and potassium channels [0..1]
         n
         m
         h
@@ -20,7 +19,8 @@ classdef HHNeuron
     end
     
     methods
-        function obj = HHNeuron(capacitance, conductance_leak, conductance_K, conductance_Na, reversal_leak, reversal_K, reversal_Na, n, m, h, membrane_voltage)
+        function obj = HHNeuron(capacitance, conductance_leak, conductance_K, conductance_Na,...
+                reversal_leak, reversal_K, reversal_Na, n, m, h, membrane_voltage)
             %initialize the neuron state variables and parameters
             obj.capacitance = capacitance;
             obj.conductance_leak = conductance_leak;
@@ -48,7 +48,6 @@ classdef HHNeuron
             obj.n = exponential_relaxation(obj.n, equi_n, tau_n, deltaT);
             obj.m = exponential_relaxation(obj.m, equi_m, tau_m, deltaT);
             obj.h = exponential_relaxation(obj.h, equi_h, tau_h, deltaT);
-            
         end
         
         function [membrane_voltage, n, m, h] = get_state(obj)
@@ -67,7 +66,9 @@ classdef HHNeuron
             den1 = obj.conductance_leak + obj.conductance_K * obj.n^4;
             den2 = obj.conductance_Na * obj.m^3 * obj.h;
             equilibrium_voltage = (num1 + num2 + num3)/(den1 + den2);
-            tau = obj.capacitance / (obj.conductance_leak + obj.conductance_Na * obj.m^3 * obj.h + obj.conductance_K * obj.n^4);
+            den1 = obj.conductance_Na * obj.m^3 * obj.h;
+            den2 = obj.conductance_leak + obj.conductance_K * obj.n^4;
+            tau = obj.capacitance / (den1 + den2);
         end
     end
 end
