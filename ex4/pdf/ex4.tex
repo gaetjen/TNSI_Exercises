@@ -56,7 +56,7 @@ this is equal to
 \end{equation*}
 
 \section{Simulation of neurons}
-We start by simulating a neuron without an input current in order to observe the resting state (steady state) of the neuron. The time courses of the state variables are shown in Figure \ref{zero}. The membrane voltage, as well as the $n$ and $m$ gating variables relax close to their steady state values within a few \si{ms}. The inactivation variable $h$ on the other hand takes considerably longer to reach its equilibrium value (approx. 18\si{ms} to get to $90\%$ of the final value).
+We start by simulating a neuron without an input current in order to observe the resting state (steady state) of the neuron. The time courses of the state variables are shown in Figure \ref{zero}. The membrane voltage, as well as the $n$ and $m$ gating variables relax close to their steady state values within a few \si{ms}. The inactivation variable $h$ on the other hand takes considerably longer to reach its equilibrium value (approx. 18\si{ms} to get to $90\%$ of the final value). The steady state values are $V_\textrm{ss} = -65 \si{mV}, n_\textrm{ss} = 0.3175, m_\textrm{ss}=0.0529$ and $h_\textrm{ss} = 0.5914$.
 
 Now we use the steady state of the neuron as the initial state for a neuron with a large constant input current of $100 \si{\nano\ampere\per\square\milli\meter}$ (Figure \ref{large}). Within $40 \si{ms}$ we can observe three action potentials. The first action potential has a slightly larger amplitude than the other two, who appear equal in size.
 
@@ -64,7 +64,7 @@ During an action potential the membrane potential rises within a few \si{ms} to 
 
 Next we use a different initial state for the neuron and an intermediate constant input current of $62 \si{\nano\ampere\per\square\milli\meter}$ (Figure \ref{med}). Two action potentials are generated within 40\si{ms}. They have a slightly lower amplitude than the action potentials generated with the large input current, but otherwise the time courses do not differ much after the membrane has crossed a certain threshold.
 
-Finally, a slightly lower constant input current of $61 \si{\nano\ampere\per\square\milli\meter}$ is used (Figure \ref{med_minus}). Here only a single action potential is generated, as the membrane potential decreases again, before it reaches the threshold value. Apparently this is due to the fact, that as the membrane voltage rises slowly the sodium inactivation gates close and the  enough to prohibit the strong sodium influx necessary for an action potential.
+Finally, a slightly lower constant input current of $61 \si{\nano\ampere\per\square\milli\meter}$ is used (Figure \ref{med_minus}). Here only a single action potential is generated. After $19.7 \si{ms}$ the membrane voltage has returned to the initial value of $-65\si{mV}$, but now the gating variables are slightly different. The potassium gating variable $n$ is slightly larger (0.374 vs.\ 0.37) whereas the sodium gating variables $m$ and $h$ are both slightly lower (0.05 and 0.49 vs.\ 0.08 and 0.5 respectively). These changes cause the membrane potential to rise slightly more slowly. As a result the potassium channels open enough to push the membrane potential back down, before the self-reinforcing opening of sodium channels can be triggered. This example demonstrates the high sensitivity of the Hodgkin-Huxley model to initial conditions.
 
 We can see, that with the interaction of just four dynamic variables, the Hodgkin-Huxley model exhibits many of the properties of a real neuron:
 \begin{itemize}
