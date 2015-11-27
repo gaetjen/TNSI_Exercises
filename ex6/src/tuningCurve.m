@@ -1,3 +1,4 @@
+%authors: Johannes Gätjen, Maria del Cerro, Lorena Morton
 rads = (0:11)*pi/12;
 stimulusSize = 50;
 responses1_m_std = [rads * 0; rads*0];
@@ -32,10 +33,10 @@ for s = s_types
     end
     subplot(2, 1, 1);
     plot(rads, responses1_m_std(1,:));hold on;
-    plot(rads, responses1_m_std(1,:) + responses1_m_std(2,:), 'r');
-    plot(rads, responses1_m_std(1,:) - responses1_m_std(2,:), 'r');
+    plot(rads, responses1_m_std(1,:) + responses1_m_std(2,:), '--r');
+    plot(rads, responses1_m_std(1,:) - responses1_m_std(2,:), '--r');
     subplot(2, 1, 2);
     plot(rads, responses2_m_std(1,:));hold on;
-    plot(rads, responses2_m_std(1,:) + responses2_m_std(2,:), 'r');
-    plot(rads, responses2_m_std(1,:) - responses2_m_std(2,:), 'r');
+    plot(rads, responses2_m_std(1,:) + responses2_m_std(2,:), '--r');
+    plot(rads, responses2_m_std(1,:) - responses2_m_std(2,:), '--r');
 end

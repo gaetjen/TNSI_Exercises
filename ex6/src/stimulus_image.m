@@ -1,3 +1,4 @@
+%authors: Johannes Gätjen, Maria del Cerro, Lorena Morton
 stimulusSize = 50;
 ave_stim1 = zeros(stimulusSize);
 ave_stim2 = zeros(stimulusSize);

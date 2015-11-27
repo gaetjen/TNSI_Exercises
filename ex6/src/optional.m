@@ -1,9 +1,10 @@
+%authors: Johannes Gätjen, Maria del Cerro, Lorena Morton
 stimulusSize = 50;
 ave_stim1 = zeros(stimulusSize);
 ave_stim2 = zeros(stimulusSize);
 ave_cov1 = zeros(stimulusSize ^2);
 ave_cov2 = zeros(stimulusSize ^2);
-s_types = 1;
+s_types = 1:3;
 
 for s = s_types
     if s == 3
@@ -39,9 +40,10 @@ for s = s_types
     figure;
     imshow(mat2gray(ave_stim2), 'InitialMagnification', 1000);
     %eigs only calculates largest eigenvalues, and is much faster
-    [eigVec, eigVal] = eigs(ave_cov2, 2);
+    [eigVec, eigVal] = eigs(ave_cov2, 3);
     figure;
-    imshow(mat2gray(reshape(eigVec(:, 3), stimulusSize, stimulusSize)), 'InitialMagnification', 1000);
+    imshow(mat2gray(reshape(eigVec(:, 1), stimulusSize, stimulusSize)), 'InitialMagnification', 1000);
     figure;
-    imshow(mat2gray(reshape(eigVec(:, 4), stimulusSize, stimulusSize)), 'InitialMagnification', 1000);
+    imshow(mat2gray(reshape(eigVec(:, 2), stimulusSize, stimulusSize)), 'InitialMagnification', 1000);
 end
+%use imwrite to save images
