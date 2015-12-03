@@ -3,11 +3,11 @@
 %maximum 2: 60°
 num_deg_samples = 12;
 rads = (0:num_deg_samples-1)*pi/num_deg_samples;
-degs = rads ./ pi * 180;
+degs = rads / pi * 180;
 stimulusSize = 50;
 responses1_m_std = [rads * 0; rads*0];
 responses2_m_std = [rads * 0; rads*0];
-repititions = stimulusSize;
+repititions = 500;
 s_types = [1,2];
 
 figure('Position', [50, 50, 800, 600], 'Name', 'Left: On Bar, Right: Off Bar');

@@ -4,7 +4,7 @@ ave_stim1 = zeros(stimulusSize);
 ave_stim2 = zeros(stimulusSize);
 ave_cov1 = zeros(stimulusSize ^2);
 ave_cov2 = zeros(stimulusSize ^2);
-s_types = 1:3;
+s_types = 3;
 
 for s = s_types
     if s == 3
