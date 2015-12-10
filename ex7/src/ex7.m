@@ -2,7 +2,7 @@
 
 numStimuli = 10000; %number of times each stimulus is presented
 histogramBins = 0:45;
-for strength = [2, 7, 200]
+for strength = [2, 7, 20]
     stimuli = repmat([strength 0;0 strength], 1, numStimuli);
     stimuli = stimuli(:, randperm(2*numStimuli));
     
