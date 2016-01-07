@@ -29,7 +29,8 @@ end
 figure;
 plot(sin, log_ll');
 legend('a', 'b', 'c', 'Location', 'south');
-
+xlabel('stimulus', 'fontsize', 18);
+ylabel('log likelihood', 'fontsize', 18);
 %assignment 3
 num_rep = 100;
 stimuli = repmat(sin', 1, num_rep);
@@ -66,4 +67,7 @@ plot(sin, sin, '--r'); hold on;
 plot(sin, stim_av);
 plot(sin, stim_av + stim_std, 'g');
 plot(sin, stim_av - stim_std, 'g');
+xlabel('actual stimulus', 'Fontsize', 18);
+ylabel('maximum likelihood stimulus', 'fontsize', 18);
+legend('actual stimulus value', 'average estimated stimulus', 'average +/- standard deviation', 'location', 'southeast');
 
