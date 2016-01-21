@@ -7,7 +7,7 @@ close all;
 Ncondition = 8;
 nu_i = linspace( 5, 20, Ncondition);
 Nrepeat = 100;
-Nspike = 200;
+Nspike = 20;
 t_ink = SpikeRaster (nu_i, Ncondition, Nrepeat, Nspike );
 
 t_zero = 0.5;
