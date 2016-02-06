@@ -1,0 +1,142 @@
+\chapter{Membrane potential and Nernst equation}
+
+\section{Neuronal cells and their electrical potential}
+
+Neurons are electrically excitable cells responsible for the transmission of information in the central nervous system. A typical neuron consists of a \textbf{cell body}, called the soma, one or many \textbf{dendrites} and a single \textbf{axon}. The neuron can transmit information to other cells with an \textbf{action potential}, an electrical signal that travels down the axon. The axon terminates in \textbf{terminal buttons}, which connect to other neurons' dendrites or other cells via junctions, called \textbf{synapses}, to transmit the messages. The axon can be covered by a \textbf{myelin sheath}, which speeds up the transmission of the action potential. So overall, the information transmission within a cell begins at the synapses of the dendrites, travels to the soma and continues on through the axon to other cells. The morphologies of neurons are varied, and can be separated into several types, e.g.\ pyramidal cells, Purkinje cells or basket cells, just to name a few.
+
+The electrical potential between the inside and outside of a cell is called the membrane potential. As the neuron receives and responds to inputs from other cells the membrane potential changes over time and place, i.e.\ the potential measured at the soma is not necessarily equal to the potential at a dendrite. The way the potential changes over time is divided into two categories. A \textbf{graded potential} can vary in size. For example, the membrane potential of a light receptor cell changes proportionally to the amount of light it receives. An \textbf{action potential} on the other hand is an all-or-nothing response. It as characterized by a very fast increase and subsequent decreases of the membrane potential. Compared to the graded potential, an action potential is almost instantaneous, and they typically do not differ strongly in magnitude from one another. Instead of quantifying the \textit{size} of the potential change, it often makes sense to measure the \textit{rate} of action potentials, i.e.\ the number of action potentials in some time period. This is called the \textbf{firing rate} of a neuron.
+
+To better understand the electrical properties of a membrane it is worth taking a look at their physical properties. The core of the neuronal membrane consists of a phospholipid bilayer. A phospholipid consists of a polar (i.e.\ water-soluble) head and a long nonpolar (i.e.\ fat-soluble) tail. Phospholipids can self-organize into various structures, one of which is the bilayer. The bilayer comprises two layers, hence the name. In each layer all of the heads point in the same direction, with the tails more or less in parallel. The two layers connect via the tails. Many proteins are embedded all over the membrane, e.g.\ channel proteins to facilitate the transport of ions through the membrane, or receptor proteins, which may detect the presence of neurotransmitters outside the cell.
+
+\section{Electrical properties of neuronal membrane}
+
+A pure lipid bilayer is impermeable to ions. Hence the permeability to ions depends on the number and type of proteins embedded in the membrane. Since ions are charged particles, the transport of ions across the membrane means an exchange of charges, which is the definition of an electric current. So instead of describing a membrane in terms of ion permeability we can also describe the electrical properties:
+\begin{itemize}
+\item[] Specific resistance:
+\begin{itemize}
+\item Natural membrane: 1 -- 100 \si{\kilo\ohm\centi\meter\squared}
+\item Membrane without proteins: 10 -- 100 \si{\mega\ohm\centi\meter\squared}
+\item Distilled water: 7 \si{\ohm\centi\meter\squared}
+\item Cytoplasm (fluid inside the cell): 80 \si{\micro\ohm\centi\meter\squared}
+\end{itemize}
+\item[] Specific capacitance:
+\begin{itemize}
+\item Natural membrane: 1 \si{\micro\farad\per\centi\meter\squared}
+\end{itemize}
+\end{itemize}
+
+Besides the resistance and capacitance of the membrane, an important aspect of the cell's electrical properties are the intra- and extracellular ion concentrations. The exact ion concentrations are different from animal to animal, but as a general rule, one can say that the extracellular medium resembles sea water, with high concentrations of sodium (\ch{Na+}) and chloride (\ch{Cl-}) and low concentration of potassium (\ch{K+}). The intracellular medium on the other hand has low concentrations of \ch{Na+} and \ch{Cl-} and high concentration of \ch{K+}. Because the ion channels make the membrane permeable, ions are constantly flowing in and out of the cell along the concentration gradients. The concentration differences are kept stable by active ion pumps, which counteract the passive ion flow. The ion pumps consume energy in the form of adenosine triphosphate (ATP) to move ions against the concentration gradient. The most common ion pump is the \ch{Na+}-\ch{K+} exchange pump. It takes one ATP to exchange one \ch{Na+} from the inside of the cell with one \ch{K+} from outside the cell. Both ions are positive so there is no net flow of charge and the pump is \textbf{charge neutral} and does not affect the membrane potential. Other pumps exchange three \ch{Na+} for two \ch{K+}, so they are \textbf{electrogenic}. In most neurons the resulting pump current makes only a small difference to the membrane potential\footnote{I don't really understand why this is the case. To maintain the concentration gradient the same number of ions must be transported through pumps as through passive channels. Does the statement mean, that ions transported through the pumps influence the membrane potential less than those transported through channels?}.
+
+Ion channels are specific for ion types. Different ion types have different sizes. If the channels had a specific size, so that ions that are too large do not fit through, they would be unable to block all smaller ions. Instead, channel pores are specific to the hydration shell of ions. Because ions are charged and water molecules are polar, water molecules are attracted to ions and form a shell/sphere around them. This shell is characteristic for every ion.
+
+A permeable membrane contains channels for every ion type. The ions can more or less freely dissipate through the membrane (channels). If the concentration of some ions are changed on one side of the membrane more ions will flow to the other side and over time the concentrations on both sides of the membrane will be equal (i.e.\ zero gradient).
+
+A semi-permeable membrane only contains channels for a subset of the ions. Now consider a cell with a membrane that is only permeable to cations (positive ions). Imagine that initially the inside of the cell has a much higher concentration of cations and anions (negative ions) than the outside, but on both sides the ratio of cations to anions is one, so the difference in charges is zero. Because of the concentration gradient cations will begin to flow out of the cell. The anions cannot pass the membrane, so their concentrations will not change. As the cations move out of the cell the ratio of charges will change, such that the outside of the cell is positively charged and the inside is negatively charged. So on the one hand we have the concentration gradient, but now there is also a gradient of charges, which translates into an \textbf{electric potential difference}. So on one hand we have the concentration gradient, which pushes the cations out of the cell, as it tries to equalize the inside and outside concentrations. On the other hand we have the electric potential, which tries to neutralize charge differences and counteracts the concentration gradient. In the beginning the concentration gradient is high, but the electric potential is zero. As cations move out of the cell, the concentration gradient decreases, and the opposite electrical potential increases. The result is, that the cations only flow out of the cell, until the force from the concentration gradient is equal to the force from the electrical potential. At that point the system is at equilibrium and the same amount of cations flow out of the cell, as flow into the cell. We say, that \textit{net flux} is zero.
+
+When there is an electric potential difference, the ions will accumulate close to the membrane, with oppositely charged ions on opposite sides of the membrane. Electrically, the membrane acts as a capacitor.
+
+The combined effect of ion concentration gradients and \textbf{relative permeabilities} determine the overall membrane potential. In short, \ch{Na+} tends to \textbf{depolarize} the cell, i.e.\ make the inside more positive, and \ch{K+} and \ch{Cl-} tend to \textbf{hyperpolarize} the cell, i.e.\ make the inside more negative. At first glance this may seem counterintuitive. For instance, potassium, which is positive, has a \textit{higher inside} concentration, but makes the inside \textit{more negative}. We will resolve this paradox in the following.
+
+\section{Nernst potential and electrochemical equilibrium}
+
+To quantify and calculate ionic driving forces and membrane potentials we use the Nernst\footnote{Walther Hermann Nernst (1864 -- 1941), German physicist. Winner of 1920 Nobel Prize in chemistry.} equation. It defines the \textbf{electrochemical equilibrium} between a concentration gradient and an electrical gradient\footnote{In the lecture slides the term ``electrical potential'' is used. From skimming some Wikipedia articles, I have the impression, that this term may be technically incorrect. Therefore I will use the terms ``electric potential difference'' or ``voltage''.} for one particular ion. The membrane voltage, at which the ion concentrations are at equilibrium, i.e.\ where the driving force from the concentration gradient is equal to the driving force from the electric potential difference, and the net ion flux is zero, is called the \textbf{reversal potential}. The Nernst equation relates the reversal potential to the inside and outside ionic concentrations:
+\begin{align}
+\begin{split}
+E_\mathrm{rev} &= \frac{RT}{zF} \ln \frac{[X]_\mathrm{out}}{[X]_\mathrm{in}} \\
+z &\qquad \text{charge of ion $X$} \\
+R &\qquad \text{universal gas constant}=8.31 \si{\joule\per\kelvin\per\mole} \\
+T &\qquad \text{temperature $\approx 310\si{\kelvin}$ at body temperature} \\
+F &\qquad \text{Faraday constant}=96480\si{\coulomb\per\mole} \\
+[X]_\mathrm{out}, [X]_\mathrm{in} &\qquad \text{outside and inside concentration of ion $X$}
+\end{split}
+\label{faraday}
+\end{align}
+
+Since $R$ and $F$ are constants, and we are only interested in the behavior of neurons in physiological conditions, we can calculate $RT/F$ and slightly simplify the equation:
+\begin{equation}
+E_\mathrm{rev} = \frac{27\si{\milli\volt}}{z} \ln \frac{[X]_\mathrm{out}}{[X]_\mathrm{in}} \\
+\label{nernst}
+\end{equation}
+We can now look at the solutions to the Nernst equation for some typical ion concentrations in neurons. Compare also with exercise 01. 
+\begin{align*}
+E_{\text{K}^+}&=\frac{27 \si{mV}}{1} \cdot \ln \frac{20 \si{mM}}{400 \si{mM}} \approx -80 \si{mV}\\
+E_{\text{Na}^+}&=\frac{27 \si{mV}}{1} \cdot \ln \frac{440 \si{mM}}{50 \si{mM}} \approx 59 \si{mV}\\
+E_{\text{Cl}^-}&=\frac{27 \si{mV}}{-1} \cdot \ln \frac{450 \si{mM}}{40 \si{mM}} \approx -65 \si{mV}\\
+E_{\text{Ca}^{2+}}&=\frac{27 \si{mV}}{2} \cdot \ln \frac{2 \si{mM}}{0.0002\si{mM}} \approx 124 \si{mV}
+\end{align*}
+
+Now let us take a closer look at the equation and analyze how its different parts influence the result. The simplified Nernst equation of \ref{nernst} basically only consists of three parts. The first part is a constant factor of 27\si{mV} and simply scales the result to the correct value. The second part, the charge of the neuron $z$ will typically assume one of only four values ($\pm 1, \pm 2$). The result is, that for anions the reversal potential has the opposite sign as for cations, and for doubly charged ions the magnitude of the reversal potential is only half that of singly charged ions\footnote{I don't know enough about electrochemistry to explain exactly why the magnitude shrinks rather than increase or stay equal.}. The final part of the equation is a \textit{logarithm} of a \textit{concentration ratio}. Basically we can identify three distinct cases.
+\begin{enumerate*}
+\item The inside and outside concentrations are equal. This means the ratio is one, and the logarithm of one is always zero. Of course, when there is no concentration gradient, there is no need for an electrical gradient to counteract it.
+\item The outside concentration is greater than the inside concentration. The ratio is larger than one, so the logarithm will be positive. If the ionic charge is also positive the overall reversal potential will also be positive (compare with \ch{Na+} above). As the concentration outside is higher the \textit{concentration gradient} exerts an \textit{inward force} on the ions, so to obtain an equilibrium we need an \textit{electrical outward force} to counteract the concentration gradient. By convention, we define a positive membrane potential, and equivalently positive currents, to mean that there is an outward current of positive charges. So the concentration gradient pushes the positive ions inward, and we need a positive voltage to balance the ion flux.
+\item The outside concentration is smaller than the inside concentration. This is the reverse of the second case. The ratio is smaller than one, so the logarithm is negative.
+\end{enumerate*}
+By taking the logarithm the reversal potential is proportional to \textit{multiplicative factors} of the concentration ratio. Whenever we \textit{multiply} the concentration ratio with a constant number, the reversal potential changes by \textit{adding} a number proportional to that factor. Since moving a negative charge in one direction is equivalent to moving a positive charge in the opposite direction the values are simply multiplied by minus one for anions.
+
+We can now better understand the paradoxical effect of the ion concentrations on the membrane potential. Consider a cell with only positive ions, that has a higher inside concentration, than outside. So overall, the inside has \textit{more positive charges}, but in order to be at equilibrium, the cell requires a \textit{negative membrane potential}, to push all of the \textit{positive charges into} the cell. For other concentration ratios and ion charges the signs are correspondingly reversed.
+
+Finally, let us observe the effects of increasing the extracellular concentration of either \ch{K+} or \ch{Na+} by 20\si{\milli\mole}:
+\begin{align*}
+E_{\text{K}^+}&=\frac{27 \si{mV}}{1} \cdot \ln \frac{20 \si{mM} + 20 \si{mM}}{400 \si{mM}} \approx -62 \si{mV}\\
+E_{\text{Na}^+}&=\frac{27 \si{mV}}{1} \cdot \ln \frac{440 \si{mM} + 20 \si{mM}}{50 \si{mM}} \approx 60 \si{mV}
+\end{align*}
+Compare with the values above, and we see that the reversal potential for potassium has changed by 18\si{mV}, whereas that of sodium has only changed by 1\si{mV}. The reason is clear from the formula. We consider the \textit{ratio} of concentrations. The outside concentration for potassium is very small, so increasing it by 20\si{\milli\mole} means \textit{doubling} the concentration, which means the ratio is also doubled and would be equivalent to \textit{halving} the inside concentration. For sodium on the other hand the change in concentration has a much smaller effect.
+
+Because the resting potential of neurons is sensitive to small changes in extracellular potassium concentration there are several mechanisms to prevent a strong aggregation of potassium. Astrocytes, a specialized glial cell, absorb \ch{K+} and redistribute it over a large area. In addition, the blood-brain barrier prevents entry of \ch{K+} into the extracellular fluid from the blood stream.
+
+\section{Resting potential of neuronal membrane}
+
+Up to now we have considered the reversal potential for single ion types. Let us now look at how we can use the Nernst equation to estimate the combined effect of multiple ions on the membrane potential and calculate the \textbf{resting potential} of the neuron.
+
+The \textbf{electrochemical driving force} $\Delta V = V_\mathrm{mem} - E_\mathrm{rev}$ is the difference between the membrane potential $V_\mathrm{mem}$ and the reversal potential of an ion $E_\mathrm{rev}$. Whenever it is not zero there is a net flow of ions, because the cell is not at equilibrium. The net ion flux $I_X$ can be calculated as the product of the driving force and the \textbf{ionic conductance} $g_X$: $I_X=g_X \cdot \Delta V$. The ionic conductance quantifies the permeability of a membrane with embedded channel proteins for a specific ion and is measured in Siemens. As the product of a conductance and a voltage is a current, the ion flux is measured in Ampere. Typical orders of magnitude in neurons are \textit{micro}Siemens and \textit{milli}Volt, the product of which is \textit{nano}Ampere.
+
+As mentioned above, we define a current to be positive when \textbf{positive charges move out} of the cell. Positive driving forces induce positive currents. The total ion flux (or current) across the membrane is the sum of all individual ion currents.
+\begin{align*}
+I_\mathrm{total} &= I_{\text{Na}^+} + I_{\text{K}^+} + I_{\text{Cl}^-} \\
+ &= g_{\text{Na}^+} (V_\mathrm{mem} - E_{\text{Na}^+} ) + g_{\text{K}^+} (V_\mathrm{mem} - E_{\text{K}^+} ) + g_{\text{Cl}^-} (V_\mathrm{mem} - E_{\text{Cl}^-} )
+\end{align*}
+The \textbf{resting potential} is the membrane potential at the steady state of the neuron, i.e.\ the membrane does not change, which means the total current is zero. In the above equation we can set $I_\mathrm{total}=0$ and $V_\mathrm{mem}=E_\mathrm{rest}$ and solve for $E_\mathrm{rest}$:
+\begin{equation}
+E_\mathrm{rest} = \frac{g_{\text{Na}^+} E_{\text{Na}^+} + g_{\text{K}^+} E_{\text{K}^+} + g_{\text{Cl}^-} E_{\text{Cl}^-}}{g_{\text{Na}^+} + g_{\text{K}^+} + g_{\text{Cl}^-}}
+\label{rest}
+\end{equation}
+This equation has a very straightforward interpretation: The \textbf{resting potential} is a \textbf{weighted average} of the reversal potentials of the individual ions. Specifically, they are weighted by their respective \textbf{ionic conductance}. This means, the higher the conductance of an ion, the closer the resting potential will be to the reversal potential for that ion. In real neurons the \ch{K+} conductance is typically much higher than those of the other neurons. Since we calculate a weighted average, we can normalize the weights so that $g_{\text{K}^+}=1$ and use the \textit{relative conductance} for the other values. Inserting some typical values yields
+\begin{equation*}
+E_\mathrm{rest} = \frac{0.03 \cdot 59\si{mV} - 81 \si{mV} - 0.1 \cdot 65 \si{mV}}{0.03 + 1 + 0.1}=-76\si{mV},
+\end{equation*}
+which is close to real measured values of membrane resting potential. Technically, we are approximating an ion's \textit{permeability} with its \textit{conductance}, which is not quite correct, but precise enough for our purposes. A more accurate result can be obtained from the \textbf{Goldman\footnote{David E. Goldman (1910--1998)} equation}:
+\begin{align*}
+E_\mathrm{rest} &= 27\si{mV} \ln \frac{P_{\text{K}^+}[{\text{K}^+}]_\mathrm{out} + P_{\text{Na}^+}[{\text{Na}^+}]_\mathrm{out} + P_{\text{Cl}^-}[{\text{Cl}^-}]_\mathrm{in}}{P_{\text{K}^+}[{\text{K}^+}]_\mathrm{in} + P_{\text{Na}^+}[{\text{Na}^+}]_\mathrm{in} + P_{\text{Cl}^-}[{\text{Cl}^-}]_\mathrm{out}}\\
+P_X &\qquad \text{permeability of ion X}
+\end{align*}
+Note that a neuron's resting potential is not equal to the reversal potential of any ion. This means that although the total membrane current is zero, the individual ionic currents are not. For instance, potassium is constantly flowing out of the cell and sodium is flowing into the cell. Over time, this would change the ion concentrations, but remember that neurons have ion pumps, which make sure that the ion concentrations stay constant.
+
+Before moving on to the final section, let me try to explain step-by-step with the help of an example how the resting potential is composed. For simplicity, consider a neuron with only two ion types, \ch{K+} and \ch{Na+}. Further let the concentrations $[{\text{K}^+}]_\mathrm{out} = [{\text{Na}^+}]_\mathrm{in} = 1\si{mM}$ and $[{\text{K}^+}]_\mathrm{in} = [{\text{Na}^+}]_\mathrm{out} = 2.718\si{mM}$. The latter is chosen to be equal to Euler's\footnote{Leonhard Euler (1707 -- 1783), Swiss mathematician, physicist, astronomer, logician and engineer.} number, so that the resulting reversal potentials are $-E_{\text{K}^+} = E_{\text{Na}^+} = 27\si{mV}$. Now, if we have an impermeable membrane, there is no potential difference between inside and outside, because both sides have the same number of charges. If we introduce a membrane, that is \textit{equally permeable} to both ion types, the resulting resting potential is 0\si{V}. Potassium will flow out of the cell, and the same amount of sodium will flow into the cell. Meanwhile, ion pumps maintain the concentration gradients. Now consider what happens, if the membrane is \textit{only} permeable to potassium. The sodium cannot influence the resting potential, because without an exchange of charges there is no current, and the voltage is proportional to the current. The resting potential is equal to the reversal potential of potassium, -27\si{mV}. Now let us assume an additional sodium conductance is introduced, no matter how small, but see what would happen if the membrane voltage stayed at -27\si{mV}. The potassium is at equilibrium, so there is no net exchange of potassium ions, but there is a constant flux of sodium into the cell. The result is a negative current and the cell is not at equilibrium. Finally consider a potassium permeability/conductance \textit{three times as large} as the sodium permeability. According to Equation \ref{rest} $E_\mathrm{rest} = -13.5\si{mV}$, but let us consider what would happen, if the membrane voltage was at 0\si{V}. Since zero is exactly the midpoint between the two reversal potentials, both ions experience equal driving forces. However, the potassium ions can cross the membrane much more easily than the sodium! For every \ch{Na+} that crosses the membrane in one direction, three times as many \ch{K+} cross in the other direction.
+
+In conclusion, for a cell to achieve resting state, i.e.\ no net current, the membrane potential must be at a midpoint between the reversal potentials of the different ions, with ions with higher permeability having a stronger influence on the resting potential.
+
+\section{How many ions cross the membrane?}
+
+In this final section we will do some approximations to estimate how often a neuron could fire an action potential before it runs out of ions, if it did not have ion pumps to maintain the ionic concentrations. We proceed in three steps:
+\begin{enumerate}
+\item Compute the number of ions in each cell.
+\item Compute the number of ions that must flow to change the membrane potential.
+\item Estimate the number of times the cell can change its potential before its ions are depleted.
+\end{enumerate}
+We consider two cells with surface areas of 0.01\si{\square\milli\meter} and 0.001\si{\square\milli\meter}. To get an estimate of their volumes (an upper bound to be exact) we consider the cells to be spheres. The volume $V$ of a sphere relates to its surface area $A$ as $V=\frac{4\pi}{3}\sqrt{A/4\pi}^3$. The volumes for the cells are thus $1.1 \times 10^{-4}\si{\cubic\milli\meter}$ and $3 \times 10^{-6}\si{\cubic\milli\meter}$ respectively.
+
+As an action potential is carried by \ch{K+} ions, we compute the number of \ch{K+} ions by multiplying the intracellular concentration with the cell's volume to obtain $5 \times 10^{-11}\si{\mole}$ and $1 \times 10^{-12}\si{\mole}$ \ch{K+} ions respectively.
+
+The capacitor equation relates the number of charges that must flow through a membrane to the change in voltage:
+\begin{align*}
+Q &= a \cdot C \cdot V \\
+Q &\qquad \text{charge, measured in Coulomb (\si{\coulomb))}} \\
+%a &\qquad \text{surface area} \\
+%C &\qquad \text{specific capacitance, measured in Farad (\si{\farad}) per area} 1\si{\farad} = 1 \si{\coulomb\per\volt}\\
+%V &\qquad \text{voltage, measured in Volt}
+\end{align*}
+The Faraday constant (compare Equation \ref{faraday}) tells us the number of charges in one mole of ions, so we can use it to calculate how many moles of \ch{K+} are necessary to change the membrane potential:
+\begin{equation*}
+K_\mathrm{flow} = \frac{a \cdot C \cdot V}{F}
+\end{equation*}
+A typical value for $C$ is 10\si{\nano\farad\per\square\milli\meter} and we consider the membrane potential to change by 70\si{mV}. Inserting the values in the equation above gives approximately $7 \times 10^{-17}\si{\mole}$ for the large cell and $7 \times 10^{-18}\si{\mole}$ for the small cell. Now we just need to calculate the ratio of ions that cross the membrane to the total number of ions in the cell. For the large cell this is around $7:5\times 10^6$ and for the small cell around $7:1\times 10^6$. So a neuron could in theory fire several hundred thousand times before running out of ions. A typical firing rate for a neuron may be 20\si{\hertz}. At this rate the small neuron could fire continuously for up to two hours.
