@@ -1,0 +1,37 @@
+\chapter{Single-compartment model}
+
+\section{Equivalent circuits}
+
+The essential characteristic of a neuron is its electrical properties. The individual components of a cell and its surroundings, such as the membrane, the intracellular plasma or channel proteins behave like electronic circuit components such as resistors, capacitors or batteries. This means we can describe neurons in terms of \textbf{equivalent circuits} and use electrical laws to predict its behavior.
+
+For example, let us consider a cylindrical axon segment. The resistance along the axon is calculated by:
+\begin{align*}
+R_L &= \frac{r_LL}{\pi a^2} \\
+R_L &\qquad \text{longitudinal resistance, measured in Ohm (\si{\ohm})} \\
+r_L &\qquad \text{resistivity, measured in resistance times length (e.g.\ \si{\ohm\meter})}\\
+L &\qquad \text{axon length}\\
+a &\qquad \text{axon radius}
+\end{align*}
+The resistivity is an intrinsic property of a conducting material. In the case of cell plasma it generally depends on ionic concentrations. With $L=100\si{\micro\meter}, a=2\si{\micro\meter}$ and $r_L=1\si{\kilo\ohm\milli\meter}$ the formula above gives us $R_L\approx 8 \si{\mega\ohm}$. Then, with Ohm's law, we can calculate the voltage drop necessary to drive a 1\si{\nano\ampere} current through this axon segment. Note that causation in Ohm's law works in both directions. Voltage differences cause currents and currents cause voltage differences.
+\begin{align*}
+R=\frac{V}{I} &\Leftrightarrow V=R\cdot I \qquad \text{Ohm's law}\\
+V_L &= 8\si{\mega\ohm}\cdot 1\si{\nano\ampere} = 8\si{mV}\\
+R &\qquad \text{resistance in Ohm (\si{\ohm})} \\
+V &\qquad \text{voltage difference in Volt (\si{\volt})}\\
+I &\qquad \text{current in Ampere (\si{\ampere})}
+\end{align*}
+
+Next we look at Ohm's law with conductance instead of resistance. Conductance is the inverse of resistance, uses the symbol $G$ and is measured in Siemens (\si{\siemens}). We consider a channel protein with a cylindrical pore of length $L=6\si{nm}$ and cross sectional area $A=0.15\si{\square\nano\meter}$
+\begin{align*}
+
+\end{align*}
+
+\section{Hydraulic analogue}
+
+\section{Single-compartment model}
+
+\section{Solving for voltage}
+
+\section{Solving for currents}
+
+\section{Ion-specific conductances}
